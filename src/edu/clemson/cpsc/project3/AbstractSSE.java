@@ -43,7 +43,7 @@ public abstract class AbstractSSE implements StringSetExtended {
     @Override
     public final void intersect(StringSet rhs, StringSet result)
     {
-        
+
     }
     @Override
     public final void difference(StringSet rhs, StringSet result) {
