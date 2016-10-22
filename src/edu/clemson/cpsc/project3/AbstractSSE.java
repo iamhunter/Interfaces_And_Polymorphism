@@ -115,7 +115,7 @@ public abstract class AbstractSSE implements StringSetExtended {
     @Override
     public final boolean equals(Object obj) {
     /* insert code here */
-        return true;
+        return this == obj;
     }
     /**
      * This method returns a string representation of the set,

@@ -21,6 +21,7 @@ public class StringSet2 extends AbstractSSE {
         myQueue = queue;
         myCurrentlength = 0;
 
+
     }
 
     @Override
@@ -46,7 +47,9 @@ public class StringSet2 extends AbstractSSE {
 
     @Override
     public void remove(String element) {
+        myCurrentlength--;
 
+        myQueue.dequeue();
     }
 
     @Override
@@ -63,11 +66,12 @@ public class StringSet2 extends AbstractSSE {
 
     @Override
     public int getMaxSize() {
-        return 0;
+        return myQueue.getMaxLength();
     }
 
     @Override
     public void clear() {
+        myQueue.clear();
 
     }
 }

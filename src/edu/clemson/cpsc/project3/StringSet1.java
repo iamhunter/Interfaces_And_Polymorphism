@@ -17,7 +17,6 @@ public class StringSet1 extends AbstractSSE {
     correspondence conceptual this = Union {contents(i)}
     for i = 1 to next
     */
-    private int myNext;
     private String[] myContents;
     private int myLength;
     private int myCurrentlength;
@@ -26,7 +25,6 @@ public class StringSet1 extends AbstractSSE {
         myContents = new String[length];
         myLength = length;
         myCurrentlength = 0;
-
     }
 
     @Override
@@ -40,8 +38,6 @@ public class StringSet1 extends AbstractSSE {
                 return;
             }
         }
-
-
     }
 
     @Override
@@ -61,6 +57,16 @@ public class StringSet1 extends AbstractSSE {
 
     @Override
     public void remove(String element) {
+
+        for(int i = 0; i < myLength; i ++)
+        {
+            if(Objects.equals(myContents[i], element))
+            {
+                myContents[i] = null;
+                myCurrentlength++;
+                return;
+            }
+        }
 
     }
 
@@ -92,6 +98,10 @@ public class StringSet1 extends AbstractSSE {
 
     @Override
     public void clear() {
+        while(this.sizeOfSet() > 0)
+        {
+            removeAny();
+        }
 
     }
 }
