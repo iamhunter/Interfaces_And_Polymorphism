@@ -1,9 +1,10 @@
-package edu.clemson.cpsc.project3;
+package edu.clemson.cpsc2150.project3;
 
 /**
  * Created by andrewmarionhunter on 10/22/16.
  */
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
@@ -38,7 +39,7 @@ public class mainDriver {
         // Read all of the lines from the file.
         String[] lines = new String[100];
         try {
-            Files.readAllLines(path).toArray(lines);
+            Files.readAllLines(path, StandardCharsets.US_ASCII).toArray(lines);
 
         } catch (IOException e) {
             System.err.println("Coud not read all lines from the file at the given path.");

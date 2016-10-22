@@ -1,4 +1,4 @@
-package edu.clemson.cpsc.project3;
+package edu.clemson.cpsc2150.project3;
 
 /**
  * Created by andrewmarionhunter on 10/19/16.
