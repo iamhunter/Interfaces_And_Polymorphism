@@ -51,28 +51,42 @@ public class mainDriver {
         StringSetExtended firstLine = new StringSet1(100);
         StringSetExtended secondLine = new StringSet2(new StringQueue1(100));
 
-        for(String word : lines[0].split(" "))
-            if(!firstLine.contains(word))
-                firstLine.insert(word);
-        for(String word : lines[1].split(" "))
-            if(!secondLine.contains(word))
-                secondLine.insert(word);
+        int count = 0;
+        for(int i = 0; lines[i] != null; i++)
+        {
+            count++;
+        }
+        if(count%2 != 0)
+        {
+            count--;
+        }
 
-        // Run the union, intersection, and difference operators.
-        StringSet union = new StringSet1(100), intersection = new StringSet1(100), difference = new StringSet1(100);
+        for(int i = 0; i < count; i = i + 2) {
+            for (String word : lines[i].split(" "))
+                if (!firstLine.contains(word))
+                    firstLine.insert(word);
+            for (String word : lines[i+1].split(" "))
+                if (!secondLine.contains(word))
+                    secondLine.insert(word);
 
-        firstLine.union(secondLine, union);
-        firstLine.intersect(secondLine, intersection);
-        firstLine.difference(secondLine, difference);
+            // Run the union, intersection, and difference operators.
+            StringSet union = new StringSet1(100), intersection = new StringSet1(100), difference = new StringSet1(100);
 
-        // Print all of the sets, including the state of the initial sets.
-        System.out.println("First line: " + firstLine);
-        System.out.println("Second line: " + secondLine);
+            firstLine.union(secondLine, union);
+            firstLine.intersect(secondLine, intersection);
+            firstLine.difference(secondLine, difference);
 
-        System.out.println();
+            // Print all of the sets, including the state of the initial sets.
+            System.out.println("First line: " + firstLine);
+            System.out.println("Second line: " + secondLine);
 
-        System.out.println("Union: " + union);
-        System.out.println("Intersection: " + intersection);
-        System.out.println("Difference: " + difference);
+            System.out.println();
+
+            System.out.println("Union: " + union);
+            System.out.println("Intersection: " + intersection);
+            System.out.println("Difference: " + difference);
+
+            System.out.println();
+        }
     }
 }
